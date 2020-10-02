@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>{% block title %}  {% endblock %}</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <link href="{% static 'vendor/Font-Awesome/css/all.min.css' %}" rel="stylesheet">
+  
+  {% block style %} 
+  
+  {% endblock %}
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark nav-fill">
+    <div class="container">
+      <a class="navbar-brand font" href="#">Edulogy</a>
+      <button class="navbar-toggler mynav" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto w-100">
+          <li class="nav-item active">
+            <a class="nav-link my-font" href="home">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item"><a class="nav-link font" href="about">About Us</a></li>
+          <li class="nav-item"><a class="nav-link font" href="contact">Contact</a></li>
+          <li class="nav-item dropdown"><a class="nav-link dropdown-toggle font" data-toggle="dropdown" href="#">Course <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li class="nav-item"><a href="video_C">C</a></li>
+              <li class="nav-item"><a href="video_python">Python</a></li>
+              <li class="nav-item"><a href="video_html">Html</a></li>
+              <li class="nav-item"><a href="video_css">Css</a></li>
+              <li class="nav-item"><a href="video_django">Django</a></li>
+              <li class="nav-item"><a href="video_javascript">JavaScript</a></li>
+              <li class="nav-item"><a href="video_java">Java</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Blog<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li class="nav-item"><a href="#">Page 1-1</a></li>
+              <li class="nav-item"><a href="#">Page 1-2</a></li>
+              <li class="nav-item"><a href="#">Page 1-3</a></li>
+            </ul>
+		  </li>
+		  <li class="nav-item"><a class="nav-link font" href="download">Downloads</a></li>
+		  {% if request.session.id %}
+		  <li class="nav-item"><a class="nav-link" href="/webtut/logout"><i class="far fa-user" style="margin-right:10px;"></i>Log Out</a></li>
+		  {% else %}
+          <li class="nav-item"><a class="nav-link" href="register"><i class="far fa-user" style="margin-right:10px;"></i>Sign Up</a></li>
+		  <li class="nav-item"><a class="nav-link" href="login"><i class='fas fa-sign-in-alt' style="margin-right:10px;"></i> Login</a></li>
+		  {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  {% block body %} 
+  
+  {% endblock %}
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark" style="margin-top: 108px;">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  </body>
+</html>

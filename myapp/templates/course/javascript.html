@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %} 
+<h1>Javascript Videos</h1>
+<div class="container mt-5 mb-5">
+    {% for vid in video %}
+    <div class="row">
+        <div class="col-md-5" style="background-color: black;">
+            <video width="320" height="240" controls>
+                <source src="{{vid.video.url}}" type="video/mp4">
+            </video>
+        </div>
+        <div class="col-md-7">
+            <h5>{{ vid.desc }}</h5>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

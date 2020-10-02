@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %} 
+  <h3 class="text-center" style="margin-top: 100px;">Downloads</h3>
+  <table class="table table-dark table-hover mt-5 text-center " align="center" style="width: 80%;">
+    <thead>
+      <tr>
+        <!-- <th>S No.</th> -->
+        <th>Name</th>
+        <th>Category</th>
+        <th>download</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for doc in doc %}
+        <tr>
+            <!-- <td>{{doc.id}}</td> -->
+            <td>{{doc.name}}</td>
+            <td>{{doc.category}}</td>
+            <td><a href="{{doc.doc.url}}" download>click here</a></td>
+        </tr>
+      {% endfor %}
+   </tbody>
+  </table>
+{% endblock %}
